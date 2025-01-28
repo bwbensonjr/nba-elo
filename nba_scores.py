@@ -2,13 +2,18 @@ import pandas as pd
 import requests
 import sys
 
+# Fix this to be dynamic
+CURRENT_SEASON = "2024-25"
+
 def main():
     if len(sys.argv) == 1:
-        seasons = ["2024-25"]
+        seasons = [CURRENT_SEASON]
     else:
         seasons = sys.argv[1:]
+    print(f"Preparing to download game logs for seasons: {seasons}")
     for season in seasons:
         get_and_save_season(season)
+    print("Done.")
 
 def get_and_save_season(season):
     print(f"Reading data for {season} NBA season...")

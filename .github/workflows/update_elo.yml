@@ -1,0 +1,41 @@
+name: Weekly NFL Elo update
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Runs at 12:00 UTC every day
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  update-elo:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Get latest data for season
+      run: python nba_scores.py
+
+    - name: Combine latest with historical data
+      run: python combine_seasons.py
+
+    - name: Run NBA ELO script
+      run: python nba_elo.py
+
+    - name: Commit and push if changed
+      run: |
+        git config --global user.name 'GitHub Action'
+        git config --global user.email 'action@github.com'
+        git add data/nba-gamelog-2024-25.csv data/nba_games.csv data/nba_latest_elo.csv nba_latest_elo_table.md nba_season_elo_table.csv
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update NFL ELO data" && git push)

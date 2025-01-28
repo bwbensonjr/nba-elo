@@ -57,15 +57,18 @@ away_rename = {
 
 def main():
     season_files = glob.glob("data/nba-gamelog-*.csv")
+    print(f"Combining season files: {season_files}")
     df_list = [pd.read_csv(fn) for fn in season_files]
     df = (pd.concat(df_list, ignore_index=True)
           .assign(season = lambda x: x["season_id"] - 20000))
     df_away = (df[df["matchup"].str.contains("@")]
                [columns]
                .rename(columns=away_rename))
+    print(f"Found {len(df_away)} away games")
     df_home = (df[~df["matchup"].str.contains("@")]
                [columns]
                .rename(columns=home_rename))
+    print(f"Found {len(df_home)} home games")
     games = (pd.merge(
         df_away,
         df_home,
@@ -74,7 +77,11 @@ def main():
     ).assign(
         actual_spread = lambda x: (x["away_score"] - x["home_score"])
     ).sort_values("game_date"))
-    games.to_csv("data/nba_games.csv", index=False)
+    print(f"Combined into {len(games)} actual matchups")
+    out_file = "data/nba_games.csv"
+    print(f"Writing output file {out_file}...")
+    games.to_csv(out_file, index=False)
+    print("Done.")
 
 if __name__ == "__main__":
     main()
