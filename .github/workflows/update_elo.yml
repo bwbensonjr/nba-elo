@@ -1,4 +1,4 @@
-name: Weekly NFL Elo update
+name: Daily NBA Elo update
 
 on:
   schedule:
@@ -38,4 +38,4 @@ jobs:
         git config --global user.name 'GitHub Action'
         git config --global user.email 'action@github.com'
         git add data/nba-gamelog-2024-25.csv data/nba_games.csv data/nba_latest_elo.csv nba_latest_elo_table.md nba_season_elo_table.csv
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update NFL ELO data" && git push)
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update NBA game score and ELO data" && git push)
