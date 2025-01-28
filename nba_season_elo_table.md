@@ -1,6 +1,6 @@
 ## NBA Elo - 2024 Season
 
-*Updated Tue Jan 28 07:30:54 2025*
+*Updated Tue Jan 28 09:04:38 2025*
 
 | away_team              |           away_elo |   away_win_prob |   away_score | home_team              |           home_elo |   home_win_prob |   home_score |   point_spread |   actual_spread |
 |:-----------------------|-------------------:|----------------:|-------------:|:-----------------------|-------------------:|----------------:|-------------:|---------------:|----------------:|

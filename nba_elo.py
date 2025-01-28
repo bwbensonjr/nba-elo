@@ -22,8 +22,11 @@ def main():
     games_with_elo = process_game_elo(nba_elo, nba_games)
     print(f"Writing games with updated Elo to {OUT_FILE}...")
     games_with_elo.to_csv("data/nba_latest_elo.csv", index=False)
-    print("Writing Markdown table file...")
+    print("Writing season Markdown table file...")
     write_markdown_output(games_with_elo, cur_season)
+    latest_elo = latest_team_elo(games_with_elo)
+    print("Writing latest team Elo Markdown file...")
+    write_latest_elo_markdown(latest_elo)
     abs_error = compute_error(games_with_elo, season=cur_season)
     print(f"Absolute error for 2024 with {K=}, {HOME_FIELD=}: {abs_error:.2f}")
     print("Done.")
@@ -137,7 +140,7 @@ def write_markdown_output(games, season):
                                 "point_spread",
                                 "actual_spread"]))
     time_update_str = datetime.datetime.now().ctime()
-    with open("nba_elo_table.md", "w") as out_file:
+    with open("nba_season_elo_table.md", "w") as out_file:
         out_file.write(f"## NBA Elo - {season} Season\n\n")
         out_file.write(f"*Updated {time_update_str}*\n\n")
         out_file.write(games_tbl.to_markdown(
@@ -147,6 +150,33 @@ def write_markdown_output(games, season):
             missingval="",
         ))
 
+def latest_team_elo(games):
+    team_games = pd.concat([
+        (games[["game_date", "away_team", "away_elo_post"]]
+         .rename(columns={"away_team": "team", "away_elo_post": "elo"})),
+        (games[["game_date", "home_team", "home_elo_post"]]
+         .rename(columns={"home_team": "team", "home_elo_post": "elo"})),
+        ], ignore_index=True,)
+    latest_elo = (team_games.sort_values("game_date", ascending=False)
+                  .groupby("team")
+                  .first()
+                  .reset_index()
+                  .rename(columns={"game_date": "last_played"})
+                  .sort_values("elo", ascending=False))
+    return latest_elo
 
+def write_latest_elo_markdown(latest_elo):
+    time_update_str = datetime.datetime.now().ctime()
+    with open("nba_latest_elo_table.md", "w") as out_file:
+        out_file.write("## NBA Latest Team Elo\n\n")
+        out_file.write(f"*Updated {time_update_str}*\n\n")
+        out_file.write(latest_elo.to_markdown(
+            index=False,
+            tablefmt="pipe",
+            floatfmt=["", "", ".0f"],
+            missingval="",
+        ))
+        
+        
 if __name__ == "__main__":
     main()
