@@ -75,7 +75,8 @@ def main():
         how="inner",
         on=["season", "game_id", "game_date"],
     ).assign(
-        actual_spread = lambda x: (x["away_score"] - x["home_score"])
+        actual_spread = lambda x: (x["away_score"] - x["home_score"]),
+        winner = lambda x: x["actual_spread"].map(lambda sp: "away" if sp > 0 else "home"),
     ).sort_values("game_date"))
     print(f"Combined into {len(games)} actual matchups")
     out_file = "data/nba_games.csv"
