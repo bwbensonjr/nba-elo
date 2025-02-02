@@ -229,11 +229,11 @@ def write_latest_elo_markdown(latest_elo):
         out_file.write(f"*Updated {time_update_str}*\n\n")
         out_file.write(
             (latest_elo
-             .drop(columns=["season", "winner", "win"])
+             [["team", "elo", "wins", "losses", "last_played", "location", "streak"]]
              .to_markdown(
                 index=False,
                 tablefmt="pipe",
-                floatfmt=["", "", ".0f", "", "0.f", "0.f", ""],
+                floatfmt=["", ".0f", "0.f", "0.f", "", "", ""],
                 missingval="",
             ))
         )

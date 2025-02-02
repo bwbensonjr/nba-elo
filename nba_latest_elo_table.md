@@ -1,36 +1,36 @@
 ## NBA Latest Team Elo
 
-*Updated Sat Feb  1 18:50:45 2025*
+*Updated Sat Feb  1 19:05:02 2025*
 
-| team                   | last_played   |   elo | location   |   wins |   losses | streak   |
-|:-----------------------|:--------------|------:|:-----------|-------:|---------:|:---------|
-| Oklahoma City Thunder  | 2025-01-29    |  1791 | away       |     36 |        9 | L1       |
-| Cleveland Cavaliers    | 2025-01-30    |  1764 | home       |     39 |        9 | W3       |
-| Houston Rockets        | 2025-01-30    |  1697 | away       |     32 |       14 | L1       |
-| Indiana Pacers         | 2025-01-29    |  1680 | home       |     25 |       19 | W3       |
-| New York Knicks        | 2025-01-29    |  1671 | home       |     32 |       16 | W5       |
-| Minnesota Timberwolves | 2025-01-30    |  1667 | away       |     27 |       21 | W5       |
-| Boston Celtics         | 2025-01-31    |  1660 | away       |     34 |       15 | W2       |
-| Memphis Grizzlies      | 2025-01-30    |  1652 | home       |     32 |       16 | W1       |
-| Denver Nuggets         | 2025-01-31    |  1628 | away       |     29 |       19 | W1       |
-| LA Clippers            | 2025-01-31    |  1594 | away       |     28 |       20 | W2       |
-| Sacramento Kings       | 2025-01-29    |  1563 | away       |     24 |       23 | L1       |
-| Los Angeles Lakers     | 2025-01-30    |  1552 | away       |     27 |       19 | W1       |
-| Phoenix Suns           | 2025-01-31    |  1539 | away       |     25 |       22 | W1       |
-| Milwaukee Bucks        | 2025-01-31    |  1529 | away       |     25 |       20 | L2       |
-| Detroit Pistons        | 2025-01-31    |  1526 | home       |     24 |       24 | W1       |
-| Dallas Mavericks       | 2025-01-31    |  1500 | away       |     26 |       23 | L1       |
-| Philadelphia 76ers     | 2025-01-31    |  1482 | home       |     19 |       28 | L1       |
-| Miami Heat             | 2025-01-29    |  1461 | home       |     22 |       23 | L1       |
-| San Antonio Spurs      | 2025-01-31    |  1447 | home       |     20 |       23 | W1       |
-| Portland Trail Blazers | 2025-01-30    |  1445 | home       |     19 |       29 | W2       |
-| Golden State Warriors  | 2025-01-31    |  1432 | home       |     24 |       24 | L1       |
-| Atlanta Hawks          | 2025-01-30    |  1417 | away       |     22 |       25 | L7       |
-| Chicago Bulls          | 2025-01-31    |  1406 | away       |     21 |       28 | W1       |
-| Toronto Raptors        | 2025-01-31    |  1401 | home       |     15 |       33 | L1       |
-| Orlando Magic          | 2025-01-30    |  1364 | away       |     24 |       25 | L2       |
-| New Orleans Pelicans   | 2025-01-31    |  1306 | home       |     12 |       37 | L5       |
-| Brooklyn Nets          | 2025-01-29    |  1290 | away       |     15 |       33 | W1       |
-| Utah Jazz              | 2025-01-30    |  1282 | home       |     10 |       36 | L8       |
-| Charlotte Hornets      | 2025-01-31    |  1250 | home       |     12 |       33 | L3       |
-| Washington Wizards     | 2025-01-30    |  1111 | home       |      6 |       40 | L16      |
+| team                   |   elo |   wins |   losses | last_played   | location   | streak   |
+|:-----------------------|------:|-------:|---------:|:--------------|:-----------|:---------|
+| Oklahoma City Thunder  |  1791 |     36 |        9 | 2025-01-29    | away       | L1       |
+| Cleveland Cavaliers    |  1764 |     39 |        9 | 2025-01-30    | home       | W3       |
+| Houston Rockets        |  1697 |     32 |       14 | 2025-01-30    | away       | L1       |
+| Indiana Pacers         |  1685 |     26 |       19 | 2025-02-01    | home       | W4       |
+| New York Knicks        |  1671 |     32 |       16 | 2025-01-29    | home       | W5       |
+| Minnesota Timberwolves |  1667 |     27 |       21 | 2025-01-30    | away       | W5       |
+| Boston Celtics         |  1660 |     34 |       15 | 2025-01-31    | away       | W2       |
+| Memphis Grizzlies      |  1652 |     32 |       16 | 2025-01-30    | home       | W1       |
+| Denver Nuggets         |  1628 |     29 |       19 | 2025-01-31    | away       | W1       |
+| LA Clippers            |  1594 |     28 |       20 | 2025-01-31    | away       | W2       |
+| Sacramento Kings       |  1563 |     24 |       23 | 2025-01-29    | away       | L1       |
+| Los Angeles Lakers     |  1552 |     27 |       19 | 2025-01-30    | away       | W1       |
+| Phoenix Suns           |  1539 |     25 |       22 | 2025-01-31    | away       | W1       |
+| Milwaukee Bucks        |  1529 |     25 |       20 | 2025-01-31    | away       | L2       |
+| Detroit Pistons        |  1526 |     24 |       24 | 2025-01-31    | home       | W1       |
+| Dallas Mavericks       |  1500 |     26 |       23 | 2025-01-31    | away       | L1       |
+| Philadelphia 76ers     |  1482 |     19 |       28 | 2025-01-31    | home       | L1       |
+| Miami Heat             |  1461 |     22 |       23 | 2025-01-29    | home       | L1       |
+| San Antonio Spurs      |  1447 |     20 |       23 | 2025-01-31    | home       | W1       |
+| Portland Trail Blazers |  1445 |     19 |       29 | 2025-01-30    | home       | W2       |
+| Golden State Warriors  |  1432 |     24 |       24 | 2025-01-31    | home       | L1       |
+| Atlanta Hawks          |  1412 |     22 |       26 | 2025-02-01    | away       | L8       |
+| Chicago Bulls          |  1406 |     21 |       28 | 2025-01-31    | away       | W1       |
+| Toronto Raptors        |  1401 |     15 |       33 | 2025-01-31    | home       | L1       |
+| Orlando Magic          |  1342 |     24 |       26 | 2025-02-01    | away       | L3       |
+| New Orleans Pelicans   |  1306 |     12 |       37 | 2025-01-31    | home       | L5       |
+| Utah Jazz              |  1304 |     11 |       36 | 2025-02-01    | home       | W1       |
+| Brooklyn Nets          |  1290 |     15 |       33 | 2025-01-29    | away       | W1       |
+| Charlotte Hornets      |  1250 |     12 |       33 | 2025-01-31    | home       | L3       |
+| Washington Wizards     |  1111 |      6 |       40 | 2025-01-30    | home       | L16      |
