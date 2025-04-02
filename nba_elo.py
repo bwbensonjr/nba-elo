@@ -5,7 +5,7 @@ import numpy as np
 
 GAME_CSV = "data/nba_games.csv"
 OUT_FILE = "data/nba_latest_elo.csv"
-K = 20
+K = 12
 HOME_FIELD = 100
 
 
